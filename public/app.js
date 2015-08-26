@@ -73,9 +73,10 @@ app.controller('MainController', function($scope) {
     $scope.answerQuestion = function(flashCard, answer) {
         console.log("flashCard: " , flashCard);
         console.log("answer: ", answer);
-
-        flashCard.answered = true;
-        if (answer.correct) flashCard.answeredCorrectly = true;
+        if (!flashCard.answered){
+          flashCard.answered = true;
+          if (answer.correct) flashCard.answeredCorrectly = true;
+        }
     };
 
 });
